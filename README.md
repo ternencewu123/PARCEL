@@ -2,27 +2,32 @@
 
 ## Abstract
 
-With the successful application of deep learning in magnetic resonance imaging, parallel imaging techniques based on neural networks have attracted wide attentions. However, without high-quality fully sampled datasets for training, the performance of these methods tends to be limited. To address this issue, this paper proposes a physics based unsupervised contrastive representation learning (PARCEL) method to speed up parallel MR imaging. Specifically, PARCEL has three key ingredients to achieve direct deep learning from the undersampled k-space data. Namely, a parallel framework has been developed by learning two branches of model-based networks unrolled with the conjugate gradient algorithm; Augmented undersampled k-space data randomly drawn from the obtained k-space data are used to help the parallel network to capture the detailed information. A specially designed co-training loss is designed to guide the two networks to capture the inherent features and representations of the-to-be-reconstructed MR image. The proposed method has been evaluated on in vivo datasets and compared to five state-of-the-art methods, whose results show PARCEL is able to learn useful representations for more accurate MR reconstructions without the reliance on the fully-sampled datasets.
-![architecture](https://user-images.githubusercontent.com/26486978/152712953-8f399d63-b57e-4f6c-bcb2-e042ef3d02dd.png)
+With the successful application of deep learning to magnetic resonance (MR) imaging, parallel imaging techniques based on neural networks have attracted wide attention. However, in the absence of high-quality, fully sampled datasets for training, the performance of these methods is limited. To address this issue, this paper proposes a Physics-bAsed unsupeRvised Contrastive rEpresentation Learning (PARCEL) method to speed up parallel MR imaging. Specifically, PARCEL has a parallel framework to contrastively learn two branches of model-based unrolling networks directly from augmented undersampled k-space data. A sophisticated co-training loss with three essential components has been designed to guide the two networks in capturing the inherent features and representations for MR images. And the final MR image is reconstructed with the trained contrastive networks. PARCEL was evaluated on in vivo datasets and compared to five state-of-the-art methods. The results show that PARCEL is able to learn useful representations for more accurate MR reconstructions without relying on fully sampled datasets. 
+
+![PARCEL](https://user-images.githubusercontent.com/26486978/155647766-d8e2bd4d-d456-439a-816a-69101a03ea4e.png)
+
   The pipeline of our proposed framework for physics-based unsupervised contrastive representation learning model
 ## How to use
 
-
+This project is conducted on an Ubuntu 20.04 LTS (64-bit) operating system utilizing two NVIDIA RTX A6000 GPUs (each with a memory of 48GB). The following we will explain how to use this code to achieve PARCEL.
 ## Clone repository
-
-
-## dataset
-
-
-## Requirements
-
-
+```
+git clone https://github.com/ternencewu123/PARCEL.git
+```
 ## Training phase
+Enter the path of the project and run the following scripts to train the parallel network.
 
-
+```
+python main.py -m='train' -trsr=0.2 -vsr=0.1
+```
 ## Test phase
+Enter the path of the project and run the following scripts to test the saved model.
+```
+python testdemo.py -tesr=1.0
+```
 
 ## Results
+![pd(2d)](https://user-images.githubusercontent.com/26486978/155674131-6cf302f2-1253-4045-94b1-90269c10a39e.png)
 
 
 ## Acknowledgements
