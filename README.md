@@ -34,3 +34,6 @@ python testdemo.py -tesr=1.0
 [1].[fastMRI](https://fastmri.med.nyu.edu/).
 
 [2].Aggarwal H K, Mani M P, Jacob M. MoDL: Model-based deep learning architecture for inverse problems. IEEE transactions on medical imaging, 2018, 38(2): 394-405.
+
+## reminder
+The full code will be made public when the paper has been reviewed!
